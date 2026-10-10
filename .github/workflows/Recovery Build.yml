@@ -121,7 +121,7 @@ jobs:
 
     - name: Clone device tree
       run: |
-        git clone ${{ github.event.inputs.DEVICE_TREE_URL }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
+        git clone https://${{ secrets.GITHUB_TOKEN }}@github.com/hmjz7371/android_device_huawei_nova9z.git -b main ./device/huawei/nova9z
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
     - name: Clone common tree
